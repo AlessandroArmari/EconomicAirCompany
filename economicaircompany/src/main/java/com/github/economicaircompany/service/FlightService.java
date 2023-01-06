@@ -69,6 +69,8 @@ public class FlightService {
 
         Optional<Flight> oldFlightOptional = flightRepository.findById(id);
 
+        // EXPLANATION: GO TO AirportService.java!!!
+
         if (oldFlightOptional.isPresent()) {
 
             Flight oldFlight = oldFlightOptional.get();

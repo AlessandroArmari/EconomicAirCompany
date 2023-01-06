@@ -12,6 +12,6 @@ public interface BookingRepository extends JpaRepository<Booking, Long> {
 
     /* 1 */ public Booking findByBookingCode(String bookingCode);
 
-    /* 2 */ public List<Booking> findByFlightAndSeatNumber(Flight flight, String seatNumber);
+    /* 2 */ public List<Booking> findByFlightAndPrice(Flight flight, Double price);
 
 }
