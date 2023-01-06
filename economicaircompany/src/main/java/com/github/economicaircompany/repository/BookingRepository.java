@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.github.economicaircompany.model.Booking;
 import com.github.economicaircompany.model.Flight;
 
+//@Repository
 public interface BookingRepository extends JpaRepository<Booking, Long> {
 
     /* 1 */ public Booking findByBookingCode(String bookingCode);
