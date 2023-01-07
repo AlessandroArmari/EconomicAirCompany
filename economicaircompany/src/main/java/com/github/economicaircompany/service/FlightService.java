@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.github.economicaircompany.model.Airport;
 import com.github.economicaircompany.model.Flight;
-import com.github.economicaircompany.repository.AirportRepository;
 import com.github.economicaircompany.repository.FlightRepository;
 
 @Service
@@ -97,7 +96,7 @@ public class FlightService {
     }
 
     /* 2 */
-    public List<Flight> getFlightByDepartureAndArrival(Airport departure, Airport arrival) {
+    public List<Flight> getFlightsByDepartureAndArrival(Airport departure, Airport arrival) {
         return flightRepository.findByDepartureAndArrival(departure, arrival);
     }
 

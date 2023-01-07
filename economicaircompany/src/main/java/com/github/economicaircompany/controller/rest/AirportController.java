@@ -42,20 +42,20 @@ public class AirportController {
     // FIRST METHOD TO DO FIND-BY-ID: @RequestParam (THE BEST METHOD)
 
     @GetMapping("/find/id") // @RequestParam---> this command requires a Param we will pas by PostMan
-    public ResponseEntity<Airport> getAirportByIdByRequestParam(@RequestParam Long id) { // --->wewill pass this id
+    public ResponseEntity<Airport> getAirportByIdBy(@RequestParam Long id) { // --->wewill pass this id
         return new ResponseEntity<>(airportService.getAirportById(id), HttpStatus.OK);
     }
 
     // SECOND METHOD TO DO FIND-BY-ID: @PathVariable
     @GetMapping("/find/{id}") // --->the "id" between curly braces is linked to @PathVariable
-    public ResponseEntity<Airport> getAirportById(@PathVariable Long id) {
+    public ResponseEntity<Airport> getAirportByIdPathVariable(@PathVariable Long id) {
         return new ResponseEntity<>(airportService.getAirportById(id), HttpStatus.OK);
 
         // --->this "id" is filled by the id we chose in the curly braces!
     }
 
-    @DeleteMapping("/delete") // +++FROM NOW ON WE USE ONLY THE @RequestParam method
-    public ResponseEntity<String> deleteAirportByIdRequestParam(@RequestParam Long id) {
+    @DeleteMapping("/delete/id") // +++FROM NOW ON WE USE ONLY THE @RequestParam method
+    public ResponseEntity<String> deleteAirportById(@RequestParam Long id) {
 
         airportService.deleteAirportById(id); // Here we just deleted the airport with a certain id
         return new ResponseEntity<>("Airport deleted successfully", HttpStatus.OK);
@@ -65,9 +65,9 @@ public class AirportController {
         // In this case is just a String, but it could've been videos, images...
     }
 
-    // AGAIN: WE USE ONLY @RequestParam ofr the id
+    // AGAIN: WE USE ONLY @RequestParam of the id
     @PutMapping("/update/id") // updating is a PUT command
-    public ResponseEntity<Airport> updateAirportByIdRequestParam(@RequestParam Long id,
+    public ResponseEntity<Airport> updateAirportById(@RequestParam Long id,
             @RequestBody Airport newAirport) {
         return new ResponseEntity<>(airportService.updateAirportById(id, newAirport), HttpStatus.OK);
     }
@@ -78,12 +78,12 @@ public class AirportController {
     // From now on the custom methods we created in AirportRepository.java
 
     @GetMapping("/find/airportCode")
-    public ResponseEntity<Airport> getAirportByAirportCodeRequestParam(@RequestParam String airportCode) {
+    public ResponseEntity<Airport> getAirportByAirportCode(@RequestParam String airportCode) {
         return new ResponseEntity<>(airportService.getAirportByAirportCode(airportCode), HttpStatus.OK);
     }
 
     @GetMapping("/find/country") // List because could be more than 1 airport!!!
-    public ResponseEntity<List<Airport>> getAirportsByCountryRequestParam(@RequestParam String country) {
+    public ResponseEntity<List<Airport>> getAirportsByCountry(@RequestParam String country) {
         return new ResponseEntity<>(airportService.getAirportsByCountry(country), HttpStatus.OK);
     }
 
