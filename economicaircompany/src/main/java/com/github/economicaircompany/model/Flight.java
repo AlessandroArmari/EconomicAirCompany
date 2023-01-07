@@ -3,18 +3,13 @@ package com.github.economicaircompany.model;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import org.hibernate.annotations.Columns;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 
 @Entity
 public class Flight {
@@ -33,8 +28,6 @@ public class Flight {
     // Here we are:
     // many flights which have one airport as departure...
     @ManyToOne
-    @JoinColumn(name = "id") // +++CONTROLLA BENE QUESTO+++
-
     private Airport departure;
 
     // ..and and one airport ad arrival
@@ -43,8 +36,6 @@ public class Flight {
     // talking about SQL foreign keys
     // IN THIS CASE: each flights WILL HAVE 2 SQL foreign keys in its SQL TABLE!!!
     @ManyToOne
-    @JoinColumn(name = "id") // +++CONTROLLA BENE QUESTO+++
-
     private Airport arrival;
 
     @Column
@@ -54,7 +45,7 @@ public class Flight {
     private LocalDateTime arrivalTime;
 
     // Again: one flight--->MANY booking per flight
-    @OneToMany(mappedBy = "booking") // +++CONTROLLA BENE QUESTO+++
+    @OneToMany
     private List<Booking> bookings;
 
     public Flight() {

@@ -1,13 +1,10 @@
 package com.github.economicaircompany.model;
 
-import org.hibernate.annotations.Columns;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
@@ -27,7 +24,6 @@ public class Booking {
     private double price;
 
     @ManyToOne
-    @JoinColumn(name = "id") // +++CONTROLLA BENE QUESTO+++
     private Flight flight;
 
     public Booking() {

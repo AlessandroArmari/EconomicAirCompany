@@ -46,7 +46,7 @@ public class Airport {
     // this is why: one--> to --->many
     // SEE class Flight for more!
 
-    @OneToMany(mappedBy = "flight") // +++CONTROLLA BENE QUESTO+++
+    @OneToMany
     private List<Flight> flights; // list beacuse there are MANY flights using this airport(which is ONE)
 
     // We will need and empty constructor
