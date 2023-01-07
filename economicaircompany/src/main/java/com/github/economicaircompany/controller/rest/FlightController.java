@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +25,7 @@ public class FlightController {
     @Autowired
     FlightService flightService;
 
-    @PutMapping("/create")
+    @PostMapping("/create")
     public ResponseEntity<Flight> createFlight(@RequestBody Flight flight) {
         return new ResponseEntity<>(flightService.saveFlight(flight), HttpStatus.CREATED);
         // WE USE .CREATED instead of .OK to be more precise. NOT MANDATORY!
