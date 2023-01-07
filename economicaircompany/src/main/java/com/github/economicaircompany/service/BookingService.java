@@ -68,7 +68,7 @@ public class BookingService {
     }
 
     /* 2 */
-    public List<Booking> getBookingByFlightAndSeatNumber(Flight flight, Double price) {
+    public List<Booking> getBookingByFlightAndPrice(Flight flight, Double price) {
         return bookingRepository.findByFlightAndPrice(flight, price);
     }
 
