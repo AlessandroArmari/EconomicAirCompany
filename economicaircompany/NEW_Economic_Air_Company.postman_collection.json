@@ -1,0 +1,664 @@
+{
+	"info": {
+		"_postman_id": "9a71a0f6-b3cd-49ba-b157-3592a9deaacf",
+		"name": "NEW_Economic_Air_Company",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25226187"
+	},
+	"item": [
+		{
+			"name": "Airport methods",
+			"item": [
+				{
+					"name": "Create Airport",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Charles De Gaulle\",\r\n    \"country\":\"Italy\",\r\n    \"city\":\"Paris\",\r\n    \"airportCode\":\"CDG\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/airport/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"airport",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/airport/delete/id?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"airport",
+								"delete",
+								"id"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Airports",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/airport/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"airport",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Airport By ID (@RequestParam)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/airport/find/id?id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"airport",
+								"find",
+								"id"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Airport By ID (@PathVariable)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/airport/find/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"airport",
+								"find",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Airport By ID (@RequestParam)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"updatedName\",\r\n    \"country\":\"updatedCountry\",\r\n    \"city\":\"updatedCity\",\r\n    \"airportCode\":\"updatedAirportCode\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/airport/update/id?id=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"airport",
+								"update",
+								"id"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "+CUSTOM+ Get Airport By Airport Code",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/airport/find/airportCode?airportCode=LGW",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"airport",
+								"find",
+								"airportCode"
+							],
+							"query": [
+								{
+									"key": "airportCode",
+									"value": "LGW"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "+CUSTOM+ Get Airports By Country (@RequestParam)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/airport/find/country?country=France",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"airport",
+								"find",
+								"country"
+							],
+							"query": [
+								{
+									"key": "country",
+									"value": "France"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "+CUSTOM+ Get Airport By Country and City (@RequestParam)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/airport/find/countryAndCity?country=UK&city=london",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"airport",
+								"find",
+								"countryAndCity"
+							],
+							"query": [
+								{
+									"key": "country",
+									"value": "UK"
+								},
+								{
+									"key": "city",
+									"value": "london"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Flight methods",
+			"item": [
+				{
+					"name": "Create Flight",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"flightCode\":\"YB92C1\",\r\n    //READ DOWN: I decided to put IDs\r\n    \"departure\":{\r\n        \"id\": 2,\r\n        \"name\": \"Gatwick\",\r\n        \"country\": \"UK\",\r\n        \"city\": \"London\",\r\n        \"airportCode\": \"GCW\",\r\n        \"flights\": []\r\n    },\r\n    \"arrival\":{\r\n        \"id\": 3,\r\n        \"name\": \"WongWao\",\r\n        \"country\": \"cina\",\r\n        \"city\": \"Honk-Kong\",\r\n        \"airportCode\": \"WGW\",\r\n        \"flights\": []\r\n        \r\n    },\r\n    \"departureTime\": \"2022-12-20T11:31:00\",\r\n    \"arrivalTime\": \"2022-12-20T12:31:00\"\r\n\r\n}\r\n\r\n//very very IMPORTANT:\r\n//If you insert departure and arrival with ID--->the system will update previous airports \r\n//If you insert departure and arrival without ID--->the system will create new airports with new ID",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/flight/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flight",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/flight/delete/id?id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flight",
+								"delete",
+								"id"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Flights",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/flight/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flight",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Flight By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/flight/find/id?id=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flight",
+								"find",
+								"id"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Flight By ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 4,\r\n        \"flightCode\": \"YB92C1\",\r\n        \"departure\": {\r\n            \"id\": 4,\r\n            \"name\": \"Gatwick\",\r\n            \"country\": \"UK\",\r\n            \"city\": \"London\",\r\n            \"airportCode\": \"GCW\",\r\n            \"flights\": []\r\n        },\r\n        \"arrival\": {\r\n            \"id\": 5,\r\n            \"name\": \"WongWao\",\r\n            \"country\": \"cina\",\r\n            \"city\": \"Honk-Kong\",\r\n            \"airportCode\": \"WGW\",\r\n            \"flights\": []\r\n        },\r\n        \"departureTime\": \"2022-12-20T11:31:00\",\r\n        \"arrivalTime\": \"2022-12-20T12:31:00\",\r\n        \"bookings\": []\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/flight/update/id?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flight",
+								"update",
+								"id"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "+CUSTOM+ Get Flight By Flight Code",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/flight/find/flightCode?flightCode=XXX444",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flight",
+								"find",
+								"flightCode"
+							],
+							"query": [
+								{
+									"key": "flightCode",
+									"value": "XXX444"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "+CUSTOM* Get Flight By Departure and Arrival",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/flight/find/departureAndArrival?departure=4&arrival=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flight",
+								"find",
+								"departureAndArrival"
+							],
+							"query": [
+								{
+									"key": "departure",
+									"value": "4"
+								},
+								{
+									"key": "arrival",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking methods",
+			"item": [
+				{
+					"name": "Create Booking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookingCode\":\"T400T\",\r\n    \"seatDescription\":\"aisle\",\r\n    \"price\":65.5,\r\n    \"flight\": {\r\n        \"id\": 1,\r\n        \"flightCode\": \"XXX444\",\r\n        \"departure\": {\r\n            \"id\": 4,\r\n            \"name\": \"Gatwick\",\r\n            \"country\": \"UK\",\r\n            \"city\": \"London\",\r\n            \"airportCode\": \"GCW\",\r\n            \"flights\": []\r\n        },\r\n        \"arrival\": {\r\n            \"id\": 5,\r\n            \"name\": \"WongWao\",\r\n            \"country\": \"cina\",\r\n            \"city\": \"Honk-Kong\",\r\n            \"airportCode\": \"WGW\",\r\n            \"flights\": []\r\n        },\r\n        \"departureTime\": \"2022-12-20T11:31:11\",\r\n        \"arrivalTime\": \"2022-12-20T12:31:11\",\r\n        \"bookings\": []\r\n    }\r\n}\r\n\r\n        //even here if you add \"id\"--->it will modify\r\n        //not giving id--->it will add a new flight",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/booking/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Booking By ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/booking/delete/id?id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking",
+								"delete",
+								"id"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Bookings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/booking/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Flight By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/booking/find/id?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking",
+								"find",
+								"id"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Booking By ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 1,\r\n        \"bookingCode\": \"updatedCode\",\r\n        \"seatDescription\": \"window\",\r\n        \"price\": 35.5,\r\n        \"flight\": {\r\n            \"id\": 1,\r\n            \"flightCode\": \"XXX444\",\r\n            \"departure\": {\r\n                \"id\": 4,\r\n                \"name\": \"Gatwick\",\r\n                \"country\": \"UK\",\r\n                \"city\": \"London\",\r\n                \"airportCode\": \"GCW\",\r\n                \"flights\": []\r\n            },\r\n            \"arrival\": {\r\n                \"id\": 5,\r\n                \"name\": \"WongWao\",\r\n                \"country\": \"cina\",\r\n                \"city\": \"Honk-Kong\",\r\n                \"airportCode\": \"WGW\",\r\n                \"flights\": []\r\n            },\r\n            \"departureTime\": \"2022-12-20T11:31:11\",\r\n            \"arrivalTime\": \"2022-12-20T12:31:11\",\r\n            \"bookings\": []\r\n        }\r\n    }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/booking/update/id?id=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking",
+								"update",
+								"id"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "+CUSTOM+ Get Booking By Booking Code",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/booking/find/bookingCode?bookingCode=updatedCode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking",
+								"find",
+								"bookingCode"
+							],
+							"query": [
+								{
+									"key": "bookingCode",
+									"value": "updatedCode"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "+CUSTOM+ Get Booking By Flight And Price",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/booking/find/flightAndPrice?flight=1&price=35.5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking",
+								"find",
+								"flightAndPrice"
+							],
+							"query": [
+								{
+									"key": "flight",
+									"value": "1"
+								},
+								{
+									"key": "price",
+									"value": "35.5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

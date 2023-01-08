@@ -60,7 +60,7 @@ public class BookingController {
         return new ResponseEntity<>(bookingService.getBookingByBookingCode(bookingCode), HttpStatus.OK);
     }
 
-    @GetMapping("/find/bookingAndSeatNumber")
+    @GetMapping("/find/flightAndPrice")
     public ResponseEntity<List<Booking>> getBookingsByFlightAndPrice(@RequestParam Flight flight,
             @RequestParam Double price) {
         return new ResponseEntity<>(bookingService.getBookingByFlightAndPrice(flight, price), HttpStatus.OK);
