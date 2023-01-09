@@ -41,5 +41,5 @@ spring.jpa.properties.hibernate.format_sql=true
 
 9. OPEN PostMan AND create THE http MEHODS you find in the file: "NEW_Economic_Air_Company.postman_collection"
 
-   10.HAVE FUN WITH THE FLIGHTS YOU WILL NEVER TAKE!!! :(
+10.HAVE FUN WITH THE FLIGHTS YOU WILL NEVER TAKE!!! :(
 
