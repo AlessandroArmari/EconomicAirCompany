@@ -21,8 +21,8 @@ dependecies selected:
 
 spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQLDialect
 spring.datasource.url=jdbc:mysql://localhost:3306/economicair +++HERE TYPE THE NAME OF YOUR SQL SCHEMA+++  
-spring.datasource.username=root +++YOUR SQL username+++
-spring.datasource.password=666Bruce666 +++YOUR SQL password+++
+spring.datasource.username= +++YOUR SQL username+++
+spring.datasource.password= +++YOUR SQL password+++
 
 spring.jpa.hibernate.ddl-auto=create +++THIS IS IMPORTANT, CHECK application.properties FOR MORE+++
 spring.jpa.show-sql=true
